@@ -62,3 +62,8 @@ Leaflet/OpenStreetMap(地図表示に使用予定)
 ___
 
 人物、施設の情報取得方法は検討中です。
+
+## 画面遷移図
+___
+
+https://www.figma.com/file/WDaG1pp1EQZuuHH5DXvqHQ/%E7%94%BB%E9%9D%A2%E9%81%B7%E7%A7%BB%E5%9B%B3(%E4%BB%AE)?node-id=0%3A1
