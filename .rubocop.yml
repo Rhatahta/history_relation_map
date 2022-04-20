@@ -1,0 +1,25 @@
+require:
+  - rubocop-rails
+
+#除外
+AllCops:
+  Exclude:
+    - 'tmp/**/*'
+    - 'vendor/**/*'
+    - 'db/**/*'
+    - 'bin/**/*'
+    - 'spec/**/*'
+    - 'node_modules/**/*'
+    - 'config/**/*'
+    - 'config.ru'
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+# クラスにコメントを残さない
+Style/Documentation:
+  Enabled: false
+
+# Gemの名前を順番にしなくていい
+Bundler/OrderedGems:
+  Enabled: false
