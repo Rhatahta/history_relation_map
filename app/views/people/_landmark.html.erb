@@ -1,0 +1,16 @@
+<h5 class="text-center"><%= @person.name %>の関連施設</h5> 
+<% @person.landmarks.each do |landmark| %>
+  <div class="card text-center rounded-pill mb-3">
+    <div class="card-body row">
+      <div class="col" >
+        <%= landmark.name %>
+      </div>
+      <div class="col">
+        <%= landmark.description_with_person %>
+      </div>
+      <div class="col">
+        お気に入り数
+      </div>
+    </div>
+  </div>
+<% end %>

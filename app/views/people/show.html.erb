@@ -1,11 +1,16 @@
 <div class="container-lg">
-  <div class="card w-50 border-dark">
-    <div class="card-body">
-      <h4 class="card-title text-center"><%= @person.name %>についての説明</h5>
-      <p class="card-text"><%= @person.description %></p>
+  <div class='row' >
+    <div class="card w-50 border-dark col">
+      <div class="card-body">
+        <h4 class="card-title text-center"><%= @person.name %>についての説明</h5>
+        <p class="card-text"><%= @person.description %></p>
+      </div>
+      <div class="card-footer bg-transparent text-center">
+        <a href="#">地図を表示</a>
+      </div>
     </div>
-    <div class="card-footer bg-transparent text-center">
-      <a href="#">地図を表示</a>
+    <div class="col">
+      <%= render "landmark" %>
     </div>
   </div>
 </div>
