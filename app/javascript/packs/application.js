@@ -10,6 +10,7 @@ import "channels"
 import "jquery";
 import 'bootstrap'
 import '../src/application.scss'
+import '../src/map.js'
 
 Rails.start()
 Turbolinks.start()
