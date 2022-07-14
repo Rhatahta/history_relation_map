@@ -7,7 +7,7 @@
       <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
         <div class="navbar-nav">
           <li class="nav-item d-flex">
-            <a class="nav-link active ms-2 mt-1" aria-current="page" href="#">人物ソート</a>
+            <%= link_to "人物ソート", people_path, class: "nav-link active ms-2 mt-1" %>
             <%= link_to "ログアウト", logout_path, method: :delete, class: "nav-link active ms-2 mt-1" %>
           </li>
         </div>
