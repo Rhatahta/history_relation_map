@@ -1,3 +1,4 @@
 class Person < ApplicationRecord
-    has_many :landmarks
+    validates :name, presence: true
+    has_many :landmarks, dependent: :destroy
 end

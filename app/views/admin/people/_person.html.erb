@@ -1,0 +1,13 @@
+<tr>
+  <td>
+    <%= person.name %>
+  </td>
+  <td>
+    <%= person.description %>
+  </td>
+  <td>
+    <%= link_to '詳細', admin_person_path(person), class: 'btn btn-info' %>
+    <%= link_to '編集', edit_admin_person_path(person), class: 'btn btn-success' %>
+    <%= link_to '削除', admin_person_path(person), method: :delete, data: { confirm: "削除しますか?" }, class: 'btn btn-danger' %>
+  </td>
+</tr>
