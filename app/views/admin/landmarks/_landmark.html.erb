@@ -1,0 +1,13 @@
+<tr>
+  <td>
+    <%= landmark.name %>
+  </td>
+  <td>
+    <%= landmark.description_with_person %>
+  </td>
+  <td>
+    <%= link_to '詳細', admin_landmark_path(landmark), class: 'btn btn-info' %>
+    <%= link_to '編集', edit_admin_landmark_path(landmark), class: 'btn btn-success' %>
+    <%= link_to '削除', admin_landmark_path(landmark), method: :delete, data: { confirm: "削除しますか?" }, class: 'btn btn-danger' %>
+  </td>
+</tr>
