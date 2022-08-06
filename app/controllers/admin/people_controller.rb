@@ -1,4 +1,4 @@
-class Admin::PeopleController < ApplicationController
+class Admin::PeopleController < Admin::BaseController
 before_action :set_person, only: %i[edit update show destroy]
 
   def index
