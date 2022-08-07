@@ -1,12 +1,25 @@
 class Admin::PeopleController < Admin::BaseController
 before_action :set_person, only: %i[edit update show destroy]
 
+  def new
+    @person = Person.new
+  end
+
   def index
     @q = Person.ransack(params[:q])
     @people = @q.result(distinct: true)
   end
 
   def edit; end
+
+  def create
+      @person = Person.new(person_params)
+      if @person.save
+        redirect_to admin_people_path
+      else
+        render :new
+      end
+  end
 
   def update
     if @person.update(person_params)
