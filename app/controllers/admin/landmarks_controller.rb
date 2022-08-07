@@ -1,11 +1,25 @@
 class Admin::LandmarksController < Admin::BaseController
     before_action :set_landmark, only: %i[edit update show destroy]
+
+    def new
+      @landmark = Landmark.new
+    end
+
     def index
         @q = Landmark.ransack(params[:q])
         @landmarks = @q.result(distinct: true)
     end
 
     def edit; end
+
+    def create
+      @landmark = Landmark.new(landmark_params)
+        if @landmark.save
+          redirect_to admin_landmarks_path
+        else
+          render :new
+        end
+    end
 
     def update
         if @landmark.update(landmark_params)
@@ -20,7 +34,7 @@ class Admin::LandmarksController < Admin::BaseController
     def destroy
         @landmark.destroy!
         redirect_to admin_landmarks_path
-      end
+    end
 
     private
 
@@ -29,6 +43,6 @@ class Admin::LandmarksController < Admin::BaseController
     end
 
     def landmark_params
-        params.require(:landmark).permit(:name, :description_with_person)
+        params.require(:landmark).permit(:person_id, :name, :description_with_person, :longitude, :latitude, :address)
     end
 end
