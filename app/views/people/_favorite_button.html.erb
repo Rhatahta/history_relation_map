@@ -1,0 +1,5 @@
+<% if current_user.favorite?(landmark) %>
+  <%= render 'people/unfavorite', { landmark: landmark } %>
+<% else %>
+  <%= render 'people/favorite', { landmark: landmark } %>
+<% end %>

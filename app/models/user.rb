@@ -8,4 +8,19 @@ class User < ApplicationRecord
   validates :email, uniqueness: true, presence: true
   validates :name, presence: true, length: { maximum: 225 }
   enum role: { general: 0, admin: 1 }
+
+  has_many :favorites, dependent: :destroy
+  has_many :landmarks, through: :favorites
+
+  def favorite(landmark)
+    landmarks << landmark
+  end
+
+  def unfavorite(landmark)
+    landmarks.destroy(landmark)
+  end
+
+  def favorite?(landmark)
+    landmarks.include?(landmark)
+  end
 end
