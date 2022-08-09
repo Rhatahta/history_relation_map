@@ -1,5 +1,5 @@
 <div class="list-group w-75 mx-auto">
   <% @people.each do |person| %>
-    <div class="list-group-item list-group-item-action"><%= link_to person.name, map_path(person) %></div>
+    <div class="list-group-item list-group-item-action"><%= link_to person.name, map_path(person), 'data-turbolinks': false %></div>
   <% end %>
 </div>

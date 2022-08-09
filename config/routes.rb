@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root 'people#index'
   resources :maps, only: %i[show]
   resources :people, only: %i[index show]
   resources :users, only: %i[new create]
