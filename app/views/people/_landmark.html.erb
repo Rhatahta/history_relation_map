@@ -8,8 +8,13 @@
       <div class="col">
         <%= landmark.description_with_person %>
       </div>
+      <% if logged_in? %>
+        <div class="col">
+          <%= render 'people/favorite_button', landmark: landmark %>
+        </div>
+      <% end %>
       <div class="col">
-        お気に入り数
+        <%= landmark.favorites.length %>
       </div>
     </div>
   </div>
