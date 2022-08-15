@@ -9,12 +9,12 @@
         <%= landmark.description_with_person %>
       </div>
       <% if logged_in? %>
-        <div class="col">
+        <div class="col-1">
           <%= render 'people/favorite_button', landmark: landmark %>
         </div>
       <% end %>
       <div class="col">
-        <%= landmark.favorites.length %>
+        <%= "#{landmark.favorites.length}件のお気に入り" %>
       </div>
     </div>
   </div>
