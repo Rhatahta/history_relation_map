@@ -15,16 +15,18 @@ before_action :set_person, only: %i[edit update show destroy]
   def create
       @person = Person.new(person_params)
       if @person.save
-        redirect_to admin_people_path
+        redirect_to admin_people_path, success: '人物データの登録に成功しました'
       else
+        flash.now[:danger] = '人物データの登録に失敗しました'
         render :new
       end
   end
 
   def update
     if @person.update(person_params)
-      redirect_to admin_person_path
+      redirect_to admin_person_path, success: '編集に成功しました'
     else
+      flash.now[:danger] = '編集に失敗しました'
       render :edit
     end
   end
@@ -33,7 +35,7 @@ before_action :set_person, only: %i[edit update show destroy]
 
   def destroy
     @person.destroy!
-    redirect_to admin_people_path
+    redirect_to admin_people_path, success: '削除しました'
   end
 
   private
