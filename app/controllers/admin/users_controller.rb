@@ -9,8 +9,9 @@ class Admin::UsersController < Admin::BaseController
 
     def update
         if @user.update(user_params)
-          redirect_to admin_users_path
+          redirect_to admin_users_path,  success: '編集に成功しました'
         else
+          flash.now[:danger] = "編集に失敗しました"
           render :edit
         end
     end
@@ -19,7 +20,7 @@ class Admin::UsersController < Admin::BaseController
 
     def destroy
         @user.destroy!
-        redirect_to admin_users_path
+        redirect_to admin_users_path, success: '削除しました'
       end
 
     private

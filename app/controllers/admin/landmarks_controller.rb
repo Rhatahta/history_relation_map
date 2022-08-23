@@ -15,16 +15,18 @@ class Admin::LandmarksController < Admin::BaseController
     def create
       @landmark = Landmark.new(landmark_params)
         if @landmark.save
-          redirect_to admin_landmarks_path
+          redirect_to admin_landmarks_path, success: '施設を登録しました'
         else
+          flash.now[:danger] = "施設の登録に失敗しました"
           render :new
         end
     end
 
     def update
         if @landmark.update(landmark_params)
-          redirect_to admin_landmarks_path
+          redirect_to admin_landmarks_path, success: '編集しました'
         else
+          flash.now[:danger] = "編集に失敗しました"
           render :edit
         end
     end
@@ -33,7 +35,7 @@ class Admin::LandmarksController < Admin::BaseController
 
     def destroy
         @landmark.destroy!
-        redirect_to admin_landmarks_path
+        redirect_to admin_landmarks_path, success: '削除しました'
     end
 
     private
