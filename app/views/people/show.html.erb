@@ -1,11 +1,9 @@
 <div class="container-lg">
   <div class='row' >
-    <div class="card w-50 border-dark col">
+    <div class="card w-50 border-dark col h-100">
       <div class="card-body">
         <h4 class="card-title text-center"><%= @person.name %>についての説明</h4>
         <p class="card-text"><%= @person.description %></p>
-      </div>
-      <div class="card-footer bg-transparent text-center">
         <%= link_to '地図を表示', map_path(@person), 'data-turbolinks': false %>
       </div>
     </div>
