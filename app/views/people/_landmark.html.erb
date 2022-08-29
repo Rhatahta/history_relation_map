@@ -2,18 +2,18 @@
 <% @person.landmarks.each do |landmark| %>
   <div class="card text-center rounded-pill mb-3">
     <div class="card-body row">
-      <div class="col" >
+      <div class="col d-flex align-items-center" >
         <%= landmark.name %>
       </div>
       <div class="col">
         <%= landmark.description_with_person %>
       </div>
       <% if logged_in? %>
-        <div class="col-1">
+        <div class="col-1 d-flex align-items-center">
           <%= render 'people/favorite_button', landmark: landmark %>
         </div>
       <% end %>
-      <div class="col">
+      <div class="col d-flex align-items-center">
         <%= "#{landmark.favorites.length}件のお気に入り" %>
       </div>
     </div>
