@@ -1,4 +1,4 @@
-<h5 class="text-center"><%= @person.name %>の関連施設</h5> 
+<h5 class="text-center"><%= link_to @person.name, person_path(@person) %>の関連施設</h5> 
 <% @person.landmarks.each do |landmark| %>
   <div class="card text-center rounded-pill mb-3">
     <div class="card-body row">

@@ -2,14 +2,10 @@
   <div class='row' >
     <div class="col">
       <%= render "map" %>
+      <%= link_to '人物詳細', person_path(@person) %>
     </div>
     <div class="col">
       <%= render "people/landmark" %>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-sm-3">
-      <%= link_to '人物詳細', person_path(@person) %>
     </div>
   </div>
 </div>
