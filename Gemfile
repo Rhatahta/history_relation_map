@@ -33,6 +33,11 @@ gem 'gon'
 gem 'sorcery'
 gem 'ransack'
 
+# For avoiding error messages
+gem 'net-smtp'
+gem 'net-imap'
+gem 'net-pop'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]

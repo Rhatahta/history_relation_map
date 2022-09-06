@@ -1,19 +1,19 @@
-<h5 class="text-center"><%= @person.name %>の関連施設</h5> 
+<h5 class="text-center"><%= link_to @person.name, person_path(@person) %>の関連施設</h5> 
 <% @person.landmarks.each do |landmark| %>
   <div class="card text-center rounded-pill mb-3">
     <div class="card-body row">
-      <div class="col" >
+      <div class="col-3 d-flex align-items-center" >
         <%= landmark.name %>
       </div>
-      <div class="col">
+      <div class="col-6">
         <%= landmark.description_with_person %>
       </div>
       <% if logged_in? %>
-        <div class="col-1">
+        <div class="col-1 d-flex align-items-center justify-content-end">
           <%= render 'people/favorite_button', landmark: landmark %>
         </div>
       <% end %>
-      <div class="col">
+      <div class="col-2 d-flex align-items-center">
         <%= "#{landmark.favorites.length}件のお気に入り" %>
       </div>
     </div>
